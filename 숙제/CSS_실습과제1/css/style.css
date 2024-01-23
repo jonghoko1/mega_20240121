@@ -1,0 +1,71 @@
+@charset "utf-8";
+
+
+/* 실습 1 */
+.ex_01 {
+    color: white;
+}
+
+.ex_01 > .red {
+    background-color: red;
+}
+.ex_01 > .orange {
+    background-color: orange;
+}
+.ex_01 > .yellow {
+    background-color: yellow;
+}
+.ex_01 > .green {
+    background-color: green;
+}
+.ex_01 > .blue {
+    background-color: blue;
+}
+.ex_01 > .violet {
+    background-color: violet;
+}
+.ex_01 > .purple {
+    background-color: purple;
+}
+.ex_01 > .black {
+    background-color: black;
+}
+
+
+/* 실습 2 */
+#img_02 {
+    background-color: #ff0;
+}
+#img_05 {
+    background-color: #f90;
+}
+#img_07 {
+    background-color: #6af;
+}
+
+/* 실습 3 */
+.ex_03 > .facebook:hover {
+    background-color: #00f;
+}
+.ex_03 > .instagram:hover {
+    background-color: #f70;
+}
+.ex_03 > .pinterest:hover {
+    background-color: #c00;
+}
+.ex_03 > .twitter:hover {
+    background-color: #08f;
+}
+.ex_03 > .youtube:hover {
+    background-color: #f00;
+}
+
+/* 실습 4 */
+.ex_04 > ul > .menu1 > ul > .history > a {
+    background-color: #f00;
+    color: #fff;
+}
+.ex_04 > ul > .menu3 > ul > .notice > a {
+    background-color: #08f;
+    color: #fff;
+}

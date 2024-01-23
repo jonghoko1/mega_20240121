@@ -1,0 +1,96 @@
+[[선택자 실습 과제]]
+
+
+
+
+실습1. [클래스 선택자]를 활용하여 폰트의 색상은 흰색을 적용하고 각 라인의 배경색을 넣으시오.
+        
+[HTML] 구문
+
+        <div class="ex_01">
+            <p class="red">RED</p>
+            <p class="orange">ORANGE</p>
+            <p class="yellow">YELLOW</p>
+            <p class="green">GREEN</p>
+            <p class="blue">BLUE</p>
+            <p class="violet">VIOLET</p>
+            <p class="purple">PURPLE</p>
+            <p class="black">BLACK</p>
+        </div>
+
+
+
+=============================================================================================
+
+
+실습2. [아이디 선택자]를 활용하여 아래 아이콘 중 좌측으로부터 두번째 아이콘의 배경색상을 #ff0를 적용하고, 다섯번째 아이콘의 배경색상을 #f90, 일곱번째 아이콘의 배경색상을 #6af으로 적용하시오.
+        
+[HTML] 구문
+
+        <div> class="ex_02">
+            <img id="img_01" src="./img/001-sandbox.png" alt="">
+            <img id="img_02" src="./img/002-fish.png" alt="">
+            <img id="img_03" src="./img/003-bird.png" alt="">
+            <img id="img_04" src="./img/004-dog.png" alt="">
+            <img id="img_05" src="./img/005-cat.png" alt="">
+            <img id="img_06" src="./img/006-turtle.png" alt="">
+            <img id="img_07" src="./img/007-hamster.png" alt="">
+        </div>
+
+
+
+
+=============================================================================================
+
+
+실습3. [마우스 오버]를 활용하여 각 아래의 아이콘을 마우스 오버시 해당하는 아이콘의 배경색이 나올 수 있도록 구성하시오. (facebook : #00f / instagram : #f70 / pinterest : #c00 / twitter : #08f / youtube : #f00)
+        
+[HTML] 구문
+
+        <div class="ex_03">
+            <img class="facebook" src="./img/facebook_icon.png" alt="페이스북">
+            <img class="instagram" src="./img/instagram_icon.png" alt="인스타그램">
+            <img class="pinterest" src="./img/pinterest_icon.png" alt="핀터레스트">
+            <img class="twitter" src="./img/twitter_icon.png" alt="트위터">
+            <img class="youtube" src="./img/youtube_icon.png" alt="유투브">
+        </div>
+
+
+
+
+
+
+=============================================================================================
+
+
+
+
+실습4. [자식 선택자]를 활용하여 "HISTORY"의 배경색상을 #f00, 폰트 색상을 #fff로 변경하시오. 그리고 "고객게시판"의 배경색상을 #08f, 폰트 색상을 #fff로 변경하시오. (단, 시작은 .ex_04로부터 시작하여 한단계씩 자식을 찾아서 "부모 > 자식" 방법으로 선택자를 적용할 것. 예시, "KIDS"를 선택하여 배경색상을 노란색인 #ff0을 적용하고자 할 때는 .ex_04 > ul > .menu2 > ul > .kids > a{background-color:#ff0;})
+        
+[HTML] 구문
+
+        <div class="ex_04">
+            <ul>
+                <li class="menu1"><a href="#">회사소개</a>
+                    <ul>
+                        <li class="target"><a href="#">회사목표</a></li>
+                        <li class="history"><a href="#">HISTORY</a></li>
+                        <li class="location"><a href="#">LOCATION</a></li>
+                    </ul>
+                </li>
+                <li class="menu2"><a href="#">제품정보</a>
+                    <ul>
+                        <li class="men"><a href="#">MEN</a></li>
+                        <li class="women"><a href="#">WOMEN</a></li>
+                        <li class="kids"><a href="#">KIDS - 예시</a></li>
+                    </ul>
+                </li>
+                <li class="menu3"><a href="#">고객서비스</a>
+                    <ul>
+                        <li class="qna"><a href="#">Q&A</a></li>
+                        <li class="notice"><a href="#">고객게시판</a></li>
+                        <li class="faq"><a href="#">FAQ</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
