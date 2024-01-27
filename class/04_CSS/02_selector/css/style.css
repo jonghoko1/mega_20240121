@@ -171,3 +171,41 @@
 .nth_selector li:last-of-type{
     border-bottom: 4px solid red;
 }
+
+/* 종속선택자 */
+div.contain_selector1 {
+    background-color: #faf;
+}
+
+div.contain_selector1 p[class^="my"] {
+    color: #fff;
+}
+
+/* Section-2의 색상을 red 변경 */
+div.contain_ex div#space.place {
+    color: red;
+}
+
+/* CSS 선택자의 명시도 */
+#css_score #score {
+    color: #f00;
+}
+#css_score .level {
+    color: orange;
+}
+#css_score p {
+    color: blue;
+}
+
+#sectiion .txt_cont {
+    background-color: #f99;
+}
+div#section .part p {
+    background-color: #f70;
+}
+div .part #txt_test {
+    background-color: #7af;
+}
+/* 110, 112, 111 */
+
+/* 반응형에서 ! important를 작성하면 원하는 스타일로 조정 불가 - 명시도 계산법에 의해 조정하는 것이 필요 */
