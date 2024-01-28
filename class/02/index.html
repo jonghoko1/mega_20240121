@@ -7,7 +7,7 @@
 </head>
 <body>
     
-    <div>1일차 복습입니다.</div>
+    <div id="top">1일차 복습입니다.</div>
     <div>블록과 인라인</div>
 
     <h3>요소성질</h3>
@@ -48,8 +48,107 @@
 
     <h2>링크태그 : a 태그</h2>
     <p>href : Hypertext REFerance 속성값 내부에 해당하는 문서 또는 경로를 참조한다.</p>
-    <!-- 절대경로 -->
+    <!-- 절대경로 : https로 시작되는 경로 설정 시 -->
     <a href="https://www.naver.com/">네이버</a>
+
+    <!-- 상대경로 : 현재의 문서 파일을  기준으로 페이지 위치를 이동시킬 때 -->
+    <a href="./sub.html">서브페이지로 이동</a>
+
+    <p>a 태그 내부의 href에서 작성되는 대표적인 속성값들</p>
+    <a href="tel:01012345678">중국집으로 전화주문</a>
+    <a href="mailto:custom@naver.com">고객센터 문의하기</a>
+    <a href="sms:01012345678">000에게 문자보내기</a>
+    <a href="#top">페이지 상단으로 이동</a>
+    <a href="javascript:alert('경고창 팝업');">브라우저 경고창 띄우기</a>
+
+    <h2>이미지 태그</h2>
+    <img src="./img/kakao1.png" alt="카카오 이미지1" style="background-color: pink; width: 100px;">
+    <img src="./img/kakao2.jpg" alt="카카오 이미지2" style="width: 100px;">
+    <img src="./img/kakao3.gif" alt="카카오 이미지3"
+    style="width: 100px;">
+
+    <img src="./img/facebook.svg" alt="페이스북 로고" style="width: 100px;">
+
+    <h2>그룹핑이 가능한 태그 : div, span</h2>
+    <div style="width: 100%; height: 200px; background-color: #aff;">
+        Main 공간
+        <div>대표 이미지</div>
+        <div style="text-align: center;">
+            <img src="./img/kakao2.jpg" alt="카카오 이미지2" style="width: 100px;">
+        </div>
+    </div>
+    <div style="width: 100%; height: 100px; background-color: #ffa;">Banner 공간</div>
+    <div style="width: 100%; height: 150px; background-color: #aaf;">Contents 공간</div>
+    <div style="width: 100%; height: 80px; background-color: #bbb;">Footer 공간</div>
+
+    <span style="color: red;">
+        오늘의 할일
+        <span style="color: aqua;">1. 아침먹기</span>
+        <a href="">밀키트 주문하기</a>
+    </span>
+
+    <h2>그밖의 텍스트를 정의하는 태그</h2>
+    <p>갖오태그 : 볼드, 이탤릭 처리</p>
+    <strong>볼드 처리1</strong>
+    <b>볼드 처리2</b>
+    <em>이탤릭 처리1</em>
+    <i>이탤릭 처리2</i>
+
+    <p>취소선 : del</p>
+    <del>취소선</del>
+    <span><del>12,000 원</del> => 10,0000 원</span>
+
+    <p>상단 표시, 하단 표시</p>
+    <span>아이디 <sup style="color: red;">*</sup></span>
+    <span>CO<sub>2</sub></span>
+
+    <p>글로벌 화폐</p>
+    <span>&99<small>.99</small></span>
+
+
+    <hr />
+
+    <h2>table 구성</h2>
+
+
+    <table border="1" style="border-collapse: collapse; text-align: center; width: 100%;">
+        <colgroup>
+            <col width="20%">
+            <col width="40%">
+            <col width="40%">
+        </colgroup>
+        <thead>
+            <tr>
+                <th colspan="2" scope="row">구분</th>
+                <th scope="row">가격</th>
+            </tr>
+        </thead>
+
+        <tfoot>
+            <tr>
+                <td>애매결과</td>
+                <td colspan="2">성인 2, 아동 1</td>
+
+            </tr>
+        </tfoot>
+
+        <tbody>
+            <tr>
+                <td rowspan="2">가격표</td>
+                <td>성인</td>
+                <td>50,000원</td>
+            </tr>
+            <tr>
+                <td>어린이</td>
+                <td>30,000원</td>
+            </tr>
+            <tr>
+                <td colspan="3">정책상 변동운용</td>
+                <!-- <td></td> -->
+                <!-- <td></td> -->
+            </tr>
+        </tbody>
+    </table>
 
 
 </body>
