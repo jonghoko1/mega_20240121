@@ -1,0 +1,86 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Ubuntu&display=swap');
+
+
+#ex_01 {
+    width: 600px;
+    height: 100px;
+    background-color: #ff7800;
+}
+
+#ex_01 > h4 {
+    font-size: 24px;
+    color: white;
+    line-height: 100px;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#ex_01 > h4 > span {
+    font-family: 'Nanum Pen Script', cursive;
+}
+
+#ex_02 {
+    width: 800px;
+    height: 400px;
+    background-image: url(../img/land_01.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+#ex_03 {
+    width: 500px;
+    height: 500px;
+    background-image: url(../img/character_01.png);
+    background-size: 40px;
+    background-position: center;
+}
+
+#ex_04 {
+    width: 500px;
+    height: 500px;
+    background-image: url(../img/bg_04.png);
+    background-size: 250px;
+    background-position: center;
+}
+#ex_04 > .inner_img {
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/ryon.gif);
+    background-position: 100% 100%;
+    background-size: auto 250px;
+    background-repeat: no-repeat;
+}
+
+#ex_05 {
+    width: 600px;
+    background-color: #ddd;
+}
+#ex_05 > .bg_img {
+    width: 100%;
+    height: 200px;
+    background-image: url(../img/bg_01.jpg);
+    background-position: center;
+    background-size: cover;
+}
+#ex_05 > .bg_img > .dark {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+#ex_05 > .bg_img > .dark > h3 {
+    text-align: center;
+    line-height: 200px;
+    font-size: 28px;
+    color: white;
+    text-transform: capitalize;
+}
+#ex_05 > p {
+    font-size: 18px;
+    color: #555;
+    font-family: 'Ubuntu', sans-serif;
+}
+#ex_05 > p > .kor {
+    font-family: 'Nanum Pen Script', cursive;
+}

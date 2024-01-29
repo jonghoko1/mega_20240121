@@ -1,0 +1,53 @@
+@charset "utf-8";
+
+#ex_01 {
+    width: 200px;
+    height: 200px;
+    background-image: url(../img/pets.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+#ex_02 {
+    width: 300px;
+    height: 300px;
+    background-image: url(../img/cherry.png);
+    background-size: 32px;
+}
+
+#ex_03 {
+    width: 300px;
+    height: 200px;
+    padding: 50px;
+    background-color: #3bf;
+}
+.inBox_03 {
+    width: 300px;
+    height: 200px;
+    background-color: #fc0;
+}
+
+#ex_04 {
+    width: 240px;
+    padding: 50px 80px;
+    background-color: #3bf;
+}
+.inBox_04 {
+    width: 240px;
+    height: 200px;
+    background-color: #fc0;
+}
+
+#ex_05 {
+    width: 300px;
+    padding: 50px;
+    background-image: url(../img/strawberry_bg_only.png);
+    background-size: auto 60px;
+    background-color: #f9a;
+}
+.inBox_05 {
+    width: 300px;
+    height: 300px;
+    background-image: url(../img/strawberry_juice.jpg);
+    background-position: center;
+}
