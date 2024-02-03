@@ -55,3 +55,120 @@ a{text-decoration: none; color: #333;}
     margin: 0 10px;
     line-height: 40px;
 }
+
+
+/* display: block | inline | inline-block */
+
+#display {
+    padding: 20px 0;
+    background-color: #aaf;
+    font-size: 0;
+}
+#display > .img-box {
+    width: calc(25% - 20px);
+    height: 200px;
+    border: 1px dashed red;
+    border: none;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+#display > .img-box.bg1 {
+    background-image: url(../img/snoopy_01.png);
+    background-color: #faa;
+}
+#display > .img-box.bg2 {
+    background-image: url(../img/snoopy_02.png);
+    background-color: #ff0;
+}
+#display > .img-box.bg3 {
+    background-image: url(../img/snoopy_03.png);
+    background-color: #0ff;
+}
+#display > .img-box.bg4 {
+    background-image: url(../img/snoopy_04.png);
+    background-color: #0f0;
+}
+
+#display-center {
+    padding: 20px 0;
+    background-color: #f90;
+}
+
+#display-center  .wrap {
+    /* width: 1000px;
+    margin: 0 auto; */
+    text-align: center;
+    font-size: 0;
+}
+#display-center > .wrap > .img-box {
+    width: 230px;
+    height: 200px;
+    border: 1px dashed red;
+    border: none;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+#display-center > .wrap > .img-box.bg1 {
+    background-image: url(../img/snoopy_01.png);
+    background-color: #faa;
+}
+#display-center > .wrap > .img-box.bg2 {
+    background-image: url(../img/snoopy_02.png);
+    background-color: #ff0;
+}
+#display-center > .wrap > .img-box.bg3 {
+    background-image: url(../img/snoopy_03.png);
+    background-color: #0ff;
+}
+#display-center > .wrap > .img-box.bg4 {
+    background-image: url(../img/snoopy_04.png);
+    background-color: #0f0;
+}
+
+
+
+#table-space {
+    width: 400px;
+    height: 300px;
+    background-image: url(../img/dog.jpg);
+    background-size: cover;
+    background-position: 50% 50%;
+    display: table;
+}
+#table-space > h4 {
+    font-size: 24px;
+    /* text-align: center;
+    line-height: 300px; */
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    background-color: rgba(0,0,0,0.5);
+    color: #fff;
+}
+
+
+#flex1 {
+    padding: 20px 0;
+    background-color: #4cf;
+    display: flex;
+    flex-direction: column;
+    flex-direction: row; /* 기본값 */
+    /* flex-direction: row-reverse;
+    flex-direction: column-reverse; */
+}
+#flex1 .item {
+    width: 150px;
+    height: 150px;
+    background-color: #afa;
+}
+#flex1 .item:nth-child(2n) {
+    background-color: #faf;
+}
