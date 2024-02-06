@@ -1,0 +1,203 @@
+@charset "utf-8";
+
+html, body {margin: 0; padding: 0;}
+h1, h2, h3, h4, h5, h6, p {margin: 0;}
+ul, ol {margin: 0; padding: 0; list-style: none;}
+a {text-decoration: none;}
+
+#ex_01 {
+    width: 600px;
+    height: 300px;
+    padding: 40px;
+    background-color: #479bf9;
+    margin: 0 auto;
+    font-size: 0px;
+}
+#ex_01 > .box {
+    width: 300px;
+    height: 300px;
+    display: inline-block;
+    background-color: #0a3;
+}
+#ex_01 > .box:nth-child(2) {
+    background-color: #a30;
+}
+
+#ex_02 {
+    width: 1200px;
+    height: 280px;
+    margin: 0 auto;
+    padding: 40px 0;
+    background-color: #eee;
+    font-size: 0px;
+
+}
+#ex_02 > .box {
+    width: calc(25% - 20px);
+    height: 280px;
+    margin: 0 10px;
+    background-color: #bee;
+    display: inline-block;
+}
+#ex_02 > .box:nth-child(1) {
+    background-image: url(../img/img_01.jpg);
+    background-position: center center;
+    background-size: cover;
+}
+#ex_02 > .box:nth-child(2) {
+    background-image: url(../img/img_02.jpg);
+    background-position: center center;
+    background-size: cover;
+}
+#ex_02 > .box:nth-child(3) {
+    background-image: url(../img/img_03.jpg);
+    background-position: center center;
+    background-size: cover;
+}
+#ex_02 > .box:nth-child(4) {
+    background-image: url(../img/img_04.jpg);
+    background-position: center center;
+    background-size: cover;
+}
+
+#ex_03 {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 40px 0;
+    background-color: #eee;
+    display: flex;
+}
+#ex_03 > .box {
+    width: calc(25% - 20px);
+    margin: 0 10px;
+}
+#ex_03 > .box:nth-child(1) > .img_space {
+    height: 280px;
+    background-image: url(../img/furniture_01.jpg);
+    background-position: center;
+    background-size: cover;
+}
+#ex_03 > .box:nth-child(2) > .img_space {
+    height: 280px;
+    background-image: url(../img/furniture_02.jpg);
+    background-position: center;
+    background-size: cover;
+}
+#ex_03 > .box:nth-child(3) > .img_space {
+    height: 280px;
+    background-image: url(../img/furniture_03.jpg);
+    background-position: center;
+    background-size: cover;
+}
+#ex_03 > .box:nth-child(4) > .img_space {
+    height: 280px;
+    background-image: url(../img/furniture_04.jpg);
+    background-position: center;
+    background-size: cover;
+}
+#ex_03 > .box > .txt_space {
+    margin-top: 20px;
+}
+#ex_03 > .box > .txt_space > h4 {
+    font-size: 16px;
+    color: #555;
+}
+
+#ex_04 {
+    width: 1200px;
+    height: 50px;
+    margin: 0 auto;
+    padding: 20px 0;
+    background-color: #eee;
+    display: flex;
+}
+#ex_04 > .list {
+    width: 120px;
+    height: 50px;
+    background-color: #bff;
+    margin: 0 20px;
+    /* display: inline-block; */
+}
+
+#ex_05 {
+    width: 1180px;
+    height: 50px;
+    margin: 0 auto;
+    padding: 20px 10px;
+    background-color: #eee;
+    display: flex;
+    justify-content: space-between;
+}
+#ex_05 > .left {
+    width: 140px;
+    height: 50px;
+    background-color: #faa;
+}
+#ex_05 > .right {
+    width: 480px;
+    height: 50px;
+    background-color: #abf;
+}
+
+#ex_06 {
+    width: 1180px;
+    height: 50px;
+    margin: 0 auto;
+    padding: 20px 10px;
+    background-color: #eee;
+    display: flex;
+    justify-content: space-between;
+}
+#ex_06 > .logo {
+    width: 140px;
+    height: 50px;
+    background-color: #faa;
+}
+#ex_06 > .menu {
+    width: 480px;
+    height: 50px;
+    background-color: #abf;
+}
+#ex_06 > .menu > ul {
+    display: flex;
+}
+#ex_06 > .menu > ul > li {
+    margin: 0 10px;
+}
+#ex_06 > .menu > ul > li > a {
+    display: block;
+    width: 100px;
+    height: 50px;
+    background-color: #ee5;
+}
+
+#ex_07 {
+    width: 1180px;
+    height: 30px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: #eee;
+    display: flex;
+    justify-content: space-between;
+}
+#ex_07 > .logo {
+    font-size: 0;
+}
+#ex_07 > .logo > a > img {
+    height: 30px;
+}
+#ex_07 > .menu {
+    background-color: #abf;
+}
+#ex_07 > .menu > ul {
+    display: flex;
+}
+#ex_07 > .menu > ul > li {
+    margin: 0 20px;
+    background-color: #ee5;
+}
+#ex_07 > .menu > ul > li > a {
+    font-size: 16px;
+    line-height: 30px;
+    color: #777;
+}
