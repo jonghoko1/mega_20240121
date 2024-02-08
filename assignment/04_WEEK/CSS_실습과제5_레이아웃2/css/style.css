@@ -1,2 +1,167 @@
 @charset "utf-8";
 
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+* {font-family: 'Nanum Gothic', sans-serif;}
+head, body {padding: 0; margin: 0;}
+h1, h2, h3, h4, h5, h6, p {margin: 0;}
+ul, ol {padding: 0; margin: 0; list-style: none;}
+a {text-decoration: none;}
+
+
+/* 실습1 */
+#ex_01 > .pd_box {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+#ex_01 > .pd_box > .img_part {
+    width: 260px;
+    height: 260px;
+    background-image: url(../img/product.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+#ex_01 > .pd_box > .img_part > img {
+    height: 50px;
+    position: absolute;
+    left: 10px;
+}
+#ex_01 > .pd_box > .img_part > img:nth-child(1) {
+    top: 10px;
+}
+#ex_01 > .pd_box > .img_part > img:nth-child(2) {
+    bottom: 10px;
+}
+#ex_01 > .pd_box > .txt_part {
+    margin-top: 20px;
+}
+#ex_01 > .pd_box > .txt_part > h3 {
+    font-size: 16px;
+    color: #555;
+}
+#ex_01 > .pd_box > .txt_part > p {
+    font-size: 14px;
+    color: #777;
+    margin-top: 10px;
+}
+#ex_01 > .pd_box > .txt_part > span {
+    font-size: 20px;
+    color: #f27935;
+    font-weight: bold;
+    margin-top: 16px;
+    display: block;
+}
+
+/* 실습2 */
+#ex_02 > .wrap {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+    background-color: #8cf;
+}
+#ex_02 > .wrap::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+#ex_02 > .wrap > .pd_box {
+    width: calc(25% - 20px);
+    height: 280px;
+    float:left;
+    background-color: #fff;
+    background-size: 50%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-radius: 4px;
+    margin: 10px;
+    position: relative;
+}
+#ex_02 > .wrap > .pd_box:hover {
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+#ex_02 > .wrap > .pd_box:nth-child(1) {
+    background-image: url(../img/disney_01.jpg);
+}
+#ex_02 > .wrap > .pd_box:nth-child(2) {
+    background-image: url(../img/disney_02.jpg);
+}
+#ex_02 > .wrap > .pd_box:nth-child(3) {
+    background-image: url(../img/disney_03.jpg);
+}
+#ex_02 > .wrap > .pd_box:nth-child(4) {
+    background-image: url(../img/disney_04.jpg);
+}
+#ex_02 > .wrap > .pd_box > p {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    font-size: 15px;
+    color: #999;
+}
+
+/* 실습3 */
+#ex_03 .wrap {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 50px 0;
+    background-color: #fc8;
+}
+#ex_03 .wrap .title_part {
+    margin-bottom: 40px;
+    text-align: center;
+}
+#ex_03 .wrap .title_part > h3 { 
+    font-size: 20px;
+    color: #333;
+    font-weight: bold;
+}
+#ex_03 .wrap .cont_part {
+    font-size: 0;
+}
+#ex_03 .wrap .cont_part .ch_box {
+    width: calc(25% - 20px);
+    height: 280px;
+    margin: 0 10px;
+    display: inline-block;
+    background-color: #fff;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+}
+#ex_03 .wrap .cont_part .ch_box:nth-child(1) {
+    background-image: url(../img/kakao_01.gif);
+}
+#ex_03 .wrap .cont_part .ch_box:nth-child(2) {
+    background-image: url(../img/kakao_02.gif);
+}
+#ex_03 .wrap .cont_part .ch_box:nth-child(3) {
+    background-image: url(../img/kakao_03.gif);
+}
+#ex_03 .wrap .cont_part .ch_box:nth-child(4) {
+    background-image: url(../img/kakao_04.gif);
+}
+#ex_03 .wrap .cont_part .ch_box > p {
+    width: 100%;
+    position: absolute;
+    bottom: 0%;
+    background-color: rgba(0,0,0,0.5);
+    font-size: 15px;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    line-height: 40px;
+    transform: translate(0, 40px);
+    transition: transform 1s;
+}
+#ex_03 .wrap .cont_part:hover {
+    cursor: pointer;
+}
+#ex_03 .wrap .cont_part:hover .ch_box > p {
+    transform: translate(0, 0);
+}
