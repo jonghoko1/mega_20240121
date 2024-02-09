@@ -162,6 +162,82 @@ a {text-decoration: none;}
 #ex_03 .wrap .cont_part:hover {
     cursor: pointer;
 }
-#ex_03 .wrap .cont_part:hover .ch_box > p {
+#ex_03 .wrap .cont_part .ch_box:nth-child(1):hover > p {
     transform: translate(0, 0);
+}
+#ex_03 .wrap .cont_part .ch_box:nth-child(2):hover > p {
+    transform: translate(0, 0);
+}
+#ex_03 .wrap .cont_part .ch_box:nth-child(3):hover > p {
+    transform: translate(0, 0);
+}
+#ex_03 .wrap .cont_part .ch_box:nth-child(4):hover > p {
+    transform: translate(0, 0);
+}
+
+/* 실습4 */
+#ex_04 > .wrap {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 50px 0;
+    background-color: #e7e7e7;
+}
+#ex_04 > .wrap > .title_part {
+    font-size: 20px;
+    color: #333;
+    font-weight: blod;
+    margin-bottom: 40px;
+    text-align: center;
+}
+#ex_04 > .wrap > .cont_part {
+    font-size: 0;
+}
+#ex_04 > .wrap > .cont_part > .pd_box {
+    width: calc(25% - 20px);
+    height: 280px;
+    margin: 0 10px 20px;
+    display: inline-block;
+    background-color: #fff;
+}
+#ex_04 > .wrap > .cont_part > .pd_box > .img_part {
+    height: calc(280px - 83.71px);
+    background-size: cover;
+    background-position: center;
+}
+#ex_04 > .wrap > .cont_part > .pd_box:nth-child(1) > .img_part {
+    background-image: url(../img/class_01.png);
+}
+#ex_04 > .wrap > .cont_part > .pd_box:nth-child(2) > .img_part {
+    background-image: url(../img/class_02.png);
+}
+#ex_04 > .wrap > .cont_part > .pd_box:nth-child(3) > .img_part {
+    background-image: url(../img/class_03.png);
+}
+#ex_04 > .wrap > .cont_part > .pd_box:nth-child(4) > .img_part {
+    background-image: url(../img/class_04.png);
+}
+#ex_04 > .wrap > .cont_part > .pd_box:nth-child(5) > .img_part {
+    background-image: url(../img/class_05.png);
+}
+#ex_04 > .wrap > .cont_part > .pd_box:nth-child(6) > .img_part {
+    background-image: url(../img/class_06.png);
+}
+#ex_04 > .wrap > .cont_part > .pd_box:nth-child(7) > .img_part {
+    background-image: url(../img/class_07.png);
+}
+#ex_04 > .wrap > .cont_part > .pd_box:nth-child(8) > .img_part {
+    background-image: url(../img/class_08.png);
+}
+#ex_04 > .wrap > .cont_part > .pd_box > .txt_part {
+    padding: 10px;
+}
+#ex_04 > .wrap > .cont_part > .pd_box > .txt_part > h4 {
+    font-size: 17px;
+    color: #555;
+    font-weight: bold;
+}
+#ex_04 > .wrap > .cont_part > .pd_box > .txt_part > p {
+    font-size: 15px;
+    color: #777;
+    margin-top: 10px;
 }
