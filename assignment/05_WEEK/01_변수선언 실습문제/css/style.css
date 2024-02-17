@@ -1,0 +1,15 @@
+@charset "utf-8";
+
+/* .snoopy {
+    width: 200px;
+    height: 200px;
+    background-position: center;
+    background-size: cover;
+} */
+.snoopy {
+    width: 200px;
+    height: 200px;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../img/snoopy_02.png);
+}
