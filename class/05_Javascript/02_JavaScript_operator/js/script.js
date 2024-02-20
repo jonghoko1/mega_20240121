@@ -86,22 +86,22 @@ $no_01 *= $no_02; // $no_01 = $no_01 * $no_02 =>[해석] 24 * 8 / $no_01 = 192
 document.write($no_01, '<br />'); // 192
 $no_01 /= $no_02; // $no_01 = $no_01 / $no_02 =>[해석] 192 * 8 / $no_01 = 24
 document.write($no_01, '<br />'); // 24
-$no_01 %= $no_02; // $no_01 = $no_01 / $no_02 =>[해석] 24 % 8 / $no_01 = 0
+$no_01 %= $no_02; // $no_01 = $no_01 % $no_02 =>[해석] 24 % 8 / $no_01 = 0
 document.write($no_01, '<br />'); // 0
 
 // 복합대입연산자 중에서 중요 포인트 문자간의 연속성을 갖고 있는 결합
 var $txt = "a";
-console.log($txt);
+console.log($txt); // a
 $txt += "b";
-console.log($txt);
+console.log($txt); // ab
 $txt += "c";
-console.log($txt);
+console.log($txt); // abc
 
 // 복합대입연산을 통한 주소의 결합
 var address1 = "서울시 서초구 강남대로123 ";
 var address2 = "메가스터디 빌딩 3층 1호 ";
 var userName = "홍길동";
-address1 += address2
+address1 += address2;
 address1 += userName;
 console.log(address1);
 
