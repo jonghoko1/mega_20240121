@@ -210,3 +210,251 @@ console.log($color); //['Red', 'Orange', 'Yellow', 'Green', 'Blue']
     splice() : 원본 데이터 변경의 원인(삭제, 추가, 변경) => 원본 데이터가 중심
     slice() : 원본데이터 변경 없음 => 잘라낸 데이터가 중심
 */
+
+
+//1차 배열 var 변수명 = [data1, data2, data3, ...]
+//배열 데이터가 여러개의 변수명으로 분리된 상태
+var $img = [
+    "img_01.jpg", 
+    "img_02.jpg", 
+    "img_03.jpg", 
+    "img_04.jpg"
+];
+var $title = [
+    "타이틀1", 
+    "타이틀2", 
+    "타이틀3", 
+    "타이틀4"
+];
+var $intro = [
+    "소개1", 
+    "소개2", 
+    "소개3", 
+    "소개4"
+];
+document.write(`<div class="wrap" style="display:flex;">`);
+for (i = 0; i < 4; i++){
+    document.write(`<div class="box" style="border:1px solid #f00;">`);
+    document.write(`<img src="./img/${$img[i]}" style="width:100px; height:60px;"/>`);
+    document.write(`<h3>${$title[i]}</h3>`);
+    document.write(`<p>${$intro[i]}</p>`);
+    document.write(`</div>`);
+}
+document.write(`</div>`);
+
+//2차 배열
+/*
+변수명 = [
+    data1, //0번 인덱스
+    data2, //1번 인덱스
+]
+변수명 = [
+    [
+        data0-0, //0번 인덱스(1차)의 0번 인덱스(2차)
+        data0-1, //0번 인덱스(1차)의 1번 인덱스(2차)
+    ], //0번 인덱스
+    [
+        data1-0, //1번 인덱스(1차)의 0번 인덱스(2차)
+        data1-1, //1번 인덱스(1차)의 1번 인덱스(2차)
+    ], //1번 인덱스
+]
+*/
+// 2차 배열을 구성하는 과정에는 동일한 패턴으로 적용되게 끔 설정이 중요
+var $product = [
+    ["img_01.jpg", "타이틀1", "소개1"], // 0번 인덱스
+    ["img_02.jpg", "타이틀2", "소개2"], // 1번 인덱스
+    ["img_03.jpg", "타이틀3", "소개3"], // 2번 인덱스
+    ["img_04.jpg", "타이틀4", "소개4"] // 3번 인덱스
+];
+console.log($product.length); //4
+document.write(`<div class="wrap" style="display:flex;">`);
+for (i = 0; i < $product.length; i++) {
+    document.write(`<div class="box" style="border:1px solid #f00;">`);
+    document.write(`<img src="./img/${$product[i][0]}" style="width:100px; height:60px;"/>`);
+    document.write(`<h3>${$product[i][1]}</h3>`);
+    document.write(`<p>${$product[i][2]}</p>`);
+    document.write(`</div>`);
+}
+document.write(`</div>`);
+
+var $kDrama = [
+    ["오징어게임", "이정재"], //0
+    ["변호사 우영우", "박은빈"], //1
+    ["유괴의날", "윤계상"] //2
+]
+console.log($kDrama[2][0]); // 유괴의날
+// "박은빈"을 콘솔창에 출력
+console.log($kDrama[1]); // ['변호사 우영우', '박은빈']
+console.log($kDrama[1][1]); // 박은빈
+
+
+//객체 배열 => JSON(DB로부터 받는 실제 데이터의 형태)
+//[{}, {}]
+//{key1 : [arrData1, arrData2]}
+
+var kDrama = [
+    {name: "오징어게임", hero:"이정재"}, //0
+    {name: "변호사 우영우", hero:"박은빈"}, //1
+    {name: "유괴의날", hero:"윤계상"}, //2
+]
+console.log(kDrama[2].name); // 유괴의날
+// "박은빈"을 콘솔창에 출력
+console.log(kDrama[1]); // {name: '변호사 우영우', hero: '박은빈'}
+console.log(kDrama[1].hero); // 박은빈
+
+// 2차 배열 데이터를 활용한 상품 리스트 구성하기
+// ==> 배열변수명[1차 배열의 인덱스 번호][2차 배열의 인덱스 번호]
+
+
+//#1. 배열의 패턴을 구성 [이미지, 타이틀, 내용, 가격]
+var pd_arr1 = [
+    ["shop_01.jpg", "마마스앤파파스", "트레이닝 완구 포함", "월 9,000원"], //0
+    ["shop_02.jpg", "알집매트", "알집꾸러기 매트", "월 6,000원"], //1
+    ["shop_03.jpg", "알집소파1", "알집꾸러기 네이비 소파", "월 7,000원"], //2
+    ["shop_04.jpg", "알집소파2", "알집꾸러기 핑크 소파", "월 8,000원"] //3
+];
+
+//#2. 구조를 구성하고 내부에 데이터를 담는다.
+var section_case = ``;
+section_case += `<section style="display:flex;">`;
+for (i = 0; i < pd_arr1.length; i++) {
+    section_case += `
+        <div class="box">
+            <img src="./img/${pd_arr1[i][0]}" alt="">
+            <h3>${pd_arr1[i][1]}</h3>
+            <p>${pd_arr1[i][2]}</p>
+            <span>${pd_arr1[i][3]}</span>
+        </div>
+    `;
+}
+section_case += `</section>`;
+document.write(section_case);
+
+// [과제] 객체 배열 데이터를 활용한 상품 리스트 구성하기
+var pd_arr2 = [
+    {img: "shop_01.jpg", title: "마마스앤파파스", cont: "트레이닝 완구 포함", price: "월 9,000원"},
+    {img: "shop_02.jpg", title: "알집매트", cont: "알집꾸러기 매트", price: "월 6,000원"},
+    {img: "shop_03.jpg", title: "알집소파1", cont: "알집꾸러기 네이비 소파", price: "월 7,000원"},
+    {img: "shop_04.jpg", title: "알집소파2", cont: "알집꾸러기 핑크 소파", price: "월 8,000원"},
+]
+
+
+// 배열데이터를 기준으로 사용할 수 있는 반복문
+// 기본 for
+// for ~ in : for(변수명(index) in 배열데이터변수명){실행문}
+// for ~ of : for(변수명(value) of 배열데이터변수명){실행문}
+// 배열데이터변수명.forEach(function(인자들){실행문});
+// 배열데이터변수명.map(function(인자들){실행문});
+// 배열데이터변수명.filter(function(인자들){실행문});
+// 배열데이터변수명.reduce(function(인자들){실행문});
+
+var pd_arr1 = [
+    ["shop_01.jpg", "마마스앤파파스", "트레이닝 완구 포함", "월 9,000원"], //0
+    ["shop_02.jpg", "알집매트", "알집꾸러기 매트", "월 6,000원"], //1
+    ["shop_03.jpg", "알집소파1", "알집꾸러기 네이비 소파", "월 7,000원"], //2
+    ["shop_04.jpg", "알집소파2", "알집꾸러기 핑크 소파", "월 8,000원"] //3
+];
+for(idx in pd_arr1){
+    console.log(idx);
+    console.log(typeof idx);
+    console.log(pd_arr1[idx]);
+}
+for(v of pd_arr1){
+    console.log(v);
+}
+pd_arr1.forEach(function(a, b){
+    console.log(a);
+    console.log(b);
+})
+
+
+// sort() : 기존 배열 데이터를 어떤 기준으로 정렬할 것인가?(상품 리스트 인기순, 저가순, 고가순, 조회순, ... 사용자의 의도에 따라서 리스트가 재배치되는 과정)
+document.write(`<hr />`);
+document.write('<h3>sort() 메서드 기능</h3>');
+document.write('<h4>문자형을 가진 배열</h4>');
+var $animal = ["monkey", "cat", "dog", "snake", "rabbit", "mouse"];
+var $sort_01 = $animal.sort();
+console.log($sort_01);
+
+var $name = ["강하늘", "박은빈", "마동석", "지민"];
+var $sort_02 = $animal.sort();
+console.log($sort_02);
+
+document.write(`<h4>숫자형태를 가진 배열 데이터</h4>`);
+var $priceNum = [10000, 5000, 3000, 7000];
+var $sort_03 = $priceNum.sort();
+console.log($sort_03); // 숫자 데이터도 첫 숫자만 기준으로 정렬(사용불가)
+
+var $sort_04 = $priceNum.sort(function(a, b) {
+    console.log(`${a}, ${b}`);
+    return a - b; // 작은 숫자부터 정렬(최저가, 202211224/20231224 오래된 순)
+    // 10000 - 5000 = 50000(양의 정수: true) = sort() 함수 매서드 => 자리교체 발생 [5000, 10000, 3000, 7000]
+    // 10000 - 3000 = 7000(양의 정수: true) = sort() 함수 매서드 => 자리교체 발생 [5000, 3000, 10000, 7000]
+});
+console.log($sort_04); // 숫자 데이터도 첫 숫자만 기준으로 정렬(사용불가)
+
+
+// 2차 배열 중에서 정렬
+var sort_arr = [
+    ["카카오 문구세트", 15000],
+    ["라이언 인형", 20000],
+    ["카카오 코스메틱 세트", 12000],
+];
+var rst_sort1 = sort_arr.sort(function(a, b){
+    return a[1] - b[1];
+});
+console.log(rst_sort1);
+
+// 객체 배열 중에서 정렬(최저가 기준)
+var sort_objArr = [
+    {name : "카카오 문구세트", price: 15000},
+    {name : "라이언 인형", price: 20000},
+    {name : "카카오 코스메틱 세트", price: 12000},
+];
+var rst_sort2 = sort_objArr.sort(function(a, b){
+    return a.price - b.price;
+})
+console.log(rst_sort2);
+
+// 객체 배열 중에서 정렬 (최고가 기준)
+var rst_sort3 = rst_sort2.reverse(); // 기존 배열의 인덱스를 역순으로 조정한다.
+console.log(rst_sort3);
+
+var sort_objArr_maxPrice = [
+    {name : "카카오 문구세트", price: 15000},
+    {name : "라이언 인형", price: 20000},
+    {name : "카카오 코스메틱 세트", price: 12000},
+];
+var rst_sort4 =  sort_objArr_maxPrice.sort(function(a, b){
+    return b.price - a.price;
+});
+console.log(rst_sort4); //price 기준으로 최고가 순으로 정렬된다.
+
+//[문자객체] indexOf('찾을문자') => 해당하는 문자 데이터의 인덱스번호 추출
+var string = "햇살이 비치는 따스한 날"
+console.log(string.indexOf("따스한")); // 8(인덱스번호)
+//[배열] indexOf() : 동일한 데이터가 존재하는지에 대한 여부를 따진다.
+var cart = [];
+cart.push("딸기");
+console.log(cart);
+cart.push("포테토칩");
+console.log(cart);
+cart.push("바나나");
+console.log(cart);
+cart.push("딸기");
+console.log(cart); // 불필요한 데이터의 중복 현상 => ['딸기', '포테토칩', '바나나', '딸기']
+
+var cart_arr = ["딸기", "포테토칩", "바나나"];
+var next_item = "딸기";
+console.log(cart_arr.indexOf("딸기")); //0
+console.log(cart_arr.indexOf("바나나")); //2
+console.log(cart_arr.indexOf("포도")); //-1
+
+if (cart_arr.indexOf(next_item) == -1){
+    cart_arr.push(next_item)
+}
+console.log(cart_arr); //['딸기', '포테토칩', '바나나']
+
+//[Homework]
+//로또 1~46까지 랜덤(Math.random() : 0 ~ 1 사이의 난수만 반환 > 정수로 변환해줘야 함. sale & floar)으로 숫자 6개를 추출하여 빈 배열 데이터에 담는데, 중복되는 숫자 없게 구성한다.
+var lotto = [];

@@ -1,0 +1,6 @@
+@charset "utf-8";
+
+#titTestID {
+    font-style : italic;
+}
+/* 동일한 아이디가 존재하더라도 스타일이 동시에 적용된다. */
