@@ -456,5 +456,5 @@ if (cart_arr.indexOf(next_item) == -1){
 console.log(cart_arr); //['딸기', '포테토칩', '바나나']
 
 //[Homework]
-//로또 1~46까지 랜덤(Math.random() : 0 ~ 1 사이의 난수만 반환 > 정수로 변환해줘야 함. sale & floar)으로 숫자 6개를 추출하여 빈 배열 데이터에 담는데, 중복되는 숫자 없게 구성한다.
+//로또 1~46까지 랜덤(Math.random() : 0 ~ 1 사이의 난수만 반환 > 정수로 변환해줘야 함. ceil & floor)으로 숫자 6개를 추출하여 빈 배열 데이터에 담는데, 중복되는 숫자 없게 구성한다.
 var lotto = [];
