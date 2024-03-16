@@ -4,3 +4,203 @@
     font-style : italic;
 }
 /* 동일한 아이디가 존재하더라도 스타일이 동시에 적용된다. */
+
+#targetImg{
+    position: absolute;
+    left: 0;
+    transition: left 1s;
+}
+#targetImg.active{
+    left: 400px;
+}
+
+.change_bgc .bgColor{
+    width: 200px;
+    height: 200px;
+    background-color: #08f;
+    transition: background-color 1s;
+}
+.change_bgc .bgColor.red {
+    background-color: #f33;
+}
+
+/* 엘리베이터 버튼에서 선택과 취소 */
+
+.elevatorButton {
+    box-sizing: border-box;
+    width: 300px;
+    height: 300px;
+    background-color: #222;
+    padding: 20px;
+}
+.elevatorButton .number {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.elevatorButton .number button {
+    width: 100%;
+    height: 100%;
+    border-radius: 10%;
+    font-size: 80px;
+    border: 6px solid #a00;
+    color: #a00;
+    background-color: #999;
+    cursor: pointer;
+    transition: border 0.5s, color 0.5s, box-shadow 0.5s;
+}
+.elevatorButton .number button.active {
+    border: 6px solid #f00;
+    color: #f00;
+    box-shadow: 0 0 10px #f00;
+}
+
+/* 로그인 버튼 + 창(로그인 버튼 / 로그인 팝업창 + 암막) */
+
+.pop_region{}
+.pop_region button {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    background-color: #08f;
+    color: #fff;
+    cursor: pointer;
+}
+
+.dark_bg {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: -1;
+    opacity: 0;
+}
+.dark_bg.active {
+    z-index: 2;
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+.popup {
+    width: 300px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background-color: #fff;
+    border-radius: 20px;
+    box-sizing: border-box;
+    padding: 20px;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    opacity: 0;
+}
+.popup.active{
+    z-index: 3;
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+.popup .close {
+    position: absolute;
+    font-size: 40px;
+    top: -50px;
+    right: -50px;
+    cursor: pointer;
+    color: #fff;
+}
+.popup .inputLine {
+    margin-bottom: 10px;
+}
+.popup .inputLine input {
+    border: none;
+    height: 40px;
+    width: 100%;
+    border-bottom: 1px solid #777;
+}
+.popup .inputBtn {
+    display: flex;
+    justify-content: center;
+}
+.popup .inputBtn button {
+    width: 100px;
+    padding: 10px 0;
+    cursor: pointer;
+    background-color: #07f;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+}
+
+/* 메뉴 : 햄버거 아이콘 클릭에 의한 메뉴 보여주기 */
+
+.menu_icon {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
+.menu_icon button {
+    border: none;
+    background-color: transparent;
+    font-size: 24px;
+    cursor: pointer;
+}
+.res_menu {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    transform: translateY(-100%);
+}
+.res_menu.active {
+    transform: translateY(0%);
+    transition: transform 0.5s;
+}
+.res_menu .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    transform: rotate(45deg);
+    color: #bbb;
+    cursor: pointer;
+}
+.res_menu .close:hover {
+    color: #fff;
+}
+.res_menu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 10px;
+}
+.res_menu ul li {
+    text-align: center;
+}
+.res_menu ul li a {
+    text-decoration: none;
+    color: #bbb;
+    opacity: 0;
+}
+.res_menu.active ul li a {
+    opacity: 1;
+    transition: opacity 1.5s;
+    transition-delay: calc(0.5s * var(--i));
+}
+/*
+.res_menu.active ul li:nth-child(1) a {transition-delay: 0.5s;}
+.res_menu.active ul li:nth-child(2) a {transition-delay: 0.5s;}
+.res_menu.active ul li:nth-child(3) a {transition-delay: 0.5s;}
+.res_menu.active ul li:nth-child(4) a {transition-delay: 0.5s;}
+*/
+.res_menu ul li a:hover{
+    color: #fff;
+}

@@ -20,7 +20,126 @@
         <div class="trip">뉴욕</div>
     </div>
 
+    <div id="tag_seletor">
+        <h6>테슬라</h6>
+        <h6>현대자동차</h6>
+        <h6>BMW</h6>
+    </div>
+
+    <h3>querySelector : 특정 선택자만 지목. 단 한개만 가능</h3>
+    <div class="query_unit">
+        <div class="fav_01">민트초코</div>
+        <div class="fav_02 fav_01">엄마는 외계인</div>
+        <div class="fav_03">슈팅스타</div>
+        <div class="fav_04">애플민트</div>
+    </div>
+
+    <h3>querySelectorAll[인덱스 번호] : 해당하는 모든 요소를 지목. 복수의 선택이 가능</h3>
+    <div class="all_unit">
+        <p>레드</p>  
+        <p>옐로우</p>
+        <p>그린</p>
+        <p>블루</p>
+        <p>퍼플</p>
+    </div>
+
+    <h2>문서 객체 조작</h2>
+    <h3>속성(attribute)의 조작</h3>
+    <img
+        id="cardEvent"
+        src="./img/card.png"
+        onmouseover="this.src='./img/ace.png'"
+        onmouseout="this.src='./img/card.png'"
+        alt="카드 뒷면"
+    />
+
+    <hr />
+    <img src="./img/boy.png" alt="소년 이미지" id="kids" />
+
+    <h3>문서 객체 조작과 이벤트(이벤트를 지칭하는 명칭 + 함수)</h3>
+    <div class="moveImg">
+        <button onclick="moveLeft();">왼쪽으로 이동</button>
+        <button onclick="moveRight();">오른쪽으로 이동</button>
+    </div>
+    <div style="position: relative; height: 300px;">
+        <img id="targetImg" src="./img/work.jpg" alt="이동하는 이미지">
+    </div>
+
+    <h3>클래스명의 속성 조작</h3>
+    <div class="change_bgc">
+        <button onclick="changeBg();">색상 변경</button>
+        <div class="bgColor"></div>
+    </div>
+
+    <p>엘리베이터 버튼에서 선택과 취소</p>
+    <div class="elevatorButton">
+        <div class="number">
+            <button onclick="onOffBtn();">3</button>
+        </div>
+    </div>
+
+    <p>로그인 버튼 + 창(로그인 버튼 / 로그인 팝업창 + 암막)</p>
+    <div class="pop_region">
+        <button onclick="loginOpen();">로그인</button>
+    </div>
+
+    <div class="dark_bg" onclick="loginClose();"></div>
+    <div class="popup">
+        <div class="close" onclick="loginClose();">×</div>
+        <form action="">
+            <div class="inputLine">
+                <input type="text" placeholder="ID">
+            </div>
+            <div class="inputLine">
+                <input type="password" placeholder="PASSWORD">
+            </div>
+            <div class="inputBtn">
+                <button>LOGIN</button>
+            </div>
+        </form>
+    </div>
+
+
+    <p>메뉴 : 햄버거 아이콘 클릭에 의한 메뉴 보여주기</p>
+
+    <div class="menu_icon">
+        <button onclick="openMenu();">
+            <ion-icon name="reorder-three-outline"></ion-icon>
+        </button>
+    </div>
+
+    <div class="res_menu">
+        <span class="close" onclick="closeMenu();">
+            <ion-icon name="add-outline"></ion-icon>
+        </span>
+        <ul>
+            <li><a href="#" style="--i:1">About</a></li>
+            <li><a href="#" style="--i:2">Project</a></li>
+            <li><a href="#" style="--i:3">Portfolio</a></li>
+            <li><a href="#" style="--i:4">Contact</a></li>
+        </ul>
+    </div>
+    <!-- var -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <script src="./js/script.js"></script>
     <!-- DOM 에서는 외부 자바스크립트의 위치를 문서의 맨 하단에 위치시킨다. -->
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
 </body>
 </html>
