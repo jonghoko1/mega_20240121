@@ -204,3 +204,70 @@
 .res_menu ul li a:hover{
     color: #fff;
 }
+
+/* innerHTML 활용 */
+.review1 {
+    width: 400px;
+    padding: 20px;
+    background-color: #aff;
+}
+.review1 .add_review {
+    display: none;
+}
+.review1 .add_review.active{
+    display: inline;
+}
+.review1 .detail {
+    display: block;
+    text-align: right;
+}
+.review1 .detail span {
+    cursor: pointer;
+}
+
+/* tab 박스 구성하기 */
+.tabSpace {
+    box-sizing: border-box;
+    width: 300px;
+    padding: 20px;
+    background-color: #ddd;
+}
+.tabSpace .top {
+    width: 100%;
+    height: 200px;
+    background-color: #aff;
+    background-position: 50% 50%;
+    background-size: cover;
+    background-image: url(../img/tree-1.jpg);
+}
+.tabSpace .thumb {
+    padding-top: 10px;
+}
+.tabSpace .thumb ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+}
+.tabSpace .thumb ul li {
+    box-sizing: border-box;
+    width: calc(100% / 3);
+    height: 60px;
+    background-color: #f90;
+    background-position: 50% 50%;
+    background-size: cover;
+    cursor: pointer;
+}
+.tabSpace .thumb ul li:nth-child(1) {
+    background-image: url(../img/tree-1-thumb.jpg);
+}
+.tabSpace .thumb ul li:nth-child(2) {
+    background-image: url(../img/tree-2-thumb.jpg);
+}
+.tabSpace .thumb ul li:nth-child(3) {
+    background-image: url(../img/tree-3-thumb.jpg);
+}
+.tabSpace .thumb ul li.active {
+    border: 4px solid red;
+}

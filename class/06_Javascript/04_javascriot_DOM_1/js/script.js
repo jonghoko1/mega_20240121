@@ -170,3 +170,87 @@ function closeMenu() {
     innerText
     TabBox 구성
 */
+
+// 문서 내의 하위요소 가져오기(get) / 조작하기(set)
+var $inHTML = document.querySelector(".in_html");
+console.log($inHTML);
+
+var $get_HTML = $inHTML.innerHTML;
+console.log($get_HTML);
+
+var $set_HTML_el = `
+    <img src="./img/coffee-pink.jpg" alt="커피 스토리">
+    <p>커피 사진-3</p>
+`;
+
+$inHTML.innerHTML = $set_HTML_el; //지정된 선택자의 하위 요소를 새로운 요소들로 변경
+
+var $inText = document.querySelector(".in_text");
+
+var $getText = $inText.innerText;
+console.log($getText);
+
+var $set_Text_el = `
+    <img src="./img/pic-2.jpg" alt="" />
+    <p>배경2</p>
+`;
+$inText.innerText = $set_HTML_el;
+
+// innerHTML은 태그 이하의 적용 가능(하위의 문자 적용 포함)
+// innerText는 문자 형태의 적용만 가능(태그 영역은 일반적인 텍스트로 노출)
+
+// 적용 유효 범위 : innerHTML > innerText
+
+
+// 리뷰 더보기
+
+var $addReview = document.querySelector(".review1 .add_review");
+var $detailBtn = document.querySelector(".review1 .detail");
+
+function reviewMore() {
+    $addReview.classList.add("active");
+    $detailBtn.innerHTML = `
+        <span class="less" onclick="reviewLess();">-감추기</span>
+    `;
+}
+function reviewLess() {
+    $addReview.classList.remove("active");
+    $detailBtn.innerHTML = `
+        <span class="more" onclick="reviewMore();">+더보기</span>
+    `;
+}
+// innerHTML의 용도 : 변경, 삭제
+// 선택자.innerHTML = "기존 하위 요소에서 변경된 하위 요소"; ==> 변경
+// 선택자.innerHTML = ""; ==> 삭제
+// 선택자=innerHTML = "선택자의 하위 영역에 새로운 요소 추가"; ==> 생성
+
+
+// tab박스 구성하기
+var tabTop = document.querySelector(".tabSpace .top");
+var tabThumbList = document.querySelectorAll(".tabSpace .thumb ul li");
+console.log(tabThumbList);
+
+
+var topImgs = ["tree-1.jpg", "tree-2.jpg", "tree-3.jpg"];
+
+function firstTab() {
+    for(i = 0; i < 3; i++){
+        tabThumbList[i].classList.remove("active"); // 3개의 리스트에서 active라는 클래스명을 제거한다.
+    }
+    tabThumbList[0].classList.add("active"); // 0번 인덱스 리스트에만 active라는 클래스명을 추가한다.
+    tabTop.style.backgroundImage=`url(./img/${topImgs[0]})` // 배열 데이터 중에 0번 인덱스의 이미지를 배경 이미지로 적용한다.
+}
+function secondTab() {
+    for(i = 0; i < 3; i++){
+        tabThumbList[i].classList.remove("active"); // 3개의 리스트에서 active라는 클래스명을 제거한다.
+    }
+    tabThumbList[1].classList.add("active"); // 1번 인덱스 리스트에만 active라는 클래스명을 추가한다.
+    tabTop.style.backgroundImage=`url(./img/${topImgs[1]})` // 배열 데이터 중에 1번 인덱스의 이미지를 배경 이미지로 적용한다.
+}
+function thirdTab() {
+    for(i = 0; i < 3; i++){
+        tabThumbList[i].classList.remove("active"); // 3개의 리스트에서 active라는 클래스명을 제거한다.
+    }
+    tabThumbList[2].classList.add("active"); // 2번 인덱스 리스트에만 active라는 클래스명을 추가한다.
+    tabTop.style.backgroundImage=`url(./img/${topImgs[2]})` // 배열 데이터 중에 2번 인덱스의 이미지를 배경 이미지로 적용한다.
+}
