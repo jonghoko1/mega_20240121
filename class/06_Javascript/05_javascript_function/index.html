@@ -13,6 +13,36 @@
     <h3>버튼을 클릭 시, 배열데이터에 저장 된 색상을 변경하기(대상은 body)</h3>
     <button onclick="change_bg();">배경색 변경</button>
 
+    <h3>함수문과 DOM의 결합</h3>
+    <!-- 초기 세팅을 하기 위한 구성 -->
+    <img id="func" src="" alt="">
+
+    <h3>클릭 이벤트에 의한 이미지 변경</h3>
+    <div>
+        <button onclick="img_change();">이미지 변경</button>
+    </div>
+    <img src="./img/boy.png" alt="" id="img_01">
+
+    <h3>버튼 클릭시마다 순차적으로 이미지 변경(pic-1.jpg ~ pic-4.jpg)</h3>
+    <div>
+        <button onclick="change_img();">▶</button>
+    </div>
+    <img id="btn_img" src="./img/pic-1.jpg" alt="">
+
+    <h3>이전 버튼과 다음 버튼을 클릭 시 해당하는 이미지로 표현(pic-1.jpg ~ pic-4.jpg)</h3>
+    <p>다음 버튼 클릭 시 1 -> 2 -> 3 -> 4 -> 1 -> 2 -> ...</p>
+    <p>이전 버튼 클릭 시 1 -> 4 -> 3 -> 2 -> 1 -> 4 -> ...</p>
+    <div>
+        <button onclick="prev();">이전</button>
+        <button onclick="next();">다음</button>
+    </div>
+    <img id="ch_img" src="./img/pic-1.jpg" alt="" style="width: 120px;">
+
+    <!-- 매개변수 -->
+    <!-- 전역변수, 지역변수 -->
+    <!-- 재귀함수, 즉시실행함수 -->
+    <!-- return문 -->
+
 
 
     <script src="./js/script.js"></script>
