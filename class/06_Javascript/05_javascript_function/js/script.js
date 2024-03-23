@@ -151,3 +151,278 @@ function prev() {
     }
     $ch_img.setAttribute("src", `./img/pic-${num}.jpg`);
 }
+
+// 매개변수를 활용한 데이터의 출력
+// 매개변수란 함수구문 외부에서 원인이되는 값을 받는다. 함수구문의 내부에 위치한 변수값을 활용하여 최종 결과가 출력되도록 구성(지역변수 => 함수구문 내부에서만 활용가능한 변수)
+//미국 > 캘리포니아주, 텍사스주
+//대한민국 > 서울시, 경기도
+
+var $star1_name = "마동석";
+var $star1_job = "영화배우";
+var $star2_name = "장도연";
+var $star2_job = "개그우먼";
+
+function fnc(name, job){
+    console.log(name);  //name이라는 변수명은 함수구문 내부에서만 사용할 수 있음(지역변수)
+    console.log(job);
+    console.log(`저의 이름은 ${name}이며, 저의 직업은 ${job} 입니다.`);
+}
+console.log(name);  //빈값
+fnc("BTS", "가수");
+fnc($star1_name, $star1_job);
+fnc($star2_name, $star2_job);
+
+// fnc($star1_name)
+
+// 매개변수를 활용한 회원명단 출력
+// #1. 회원명단의 배열 데이터
+// 2차 배열 패턴 : ["이름", "아이디", "이메일"]
+var $member = [
+    ["홍일동", "h1d", "h1d@naver.com"],
+    ["홍이동", "h2d", "h2d@gmail.com"],
+    ["홍삼동", "h3d", "h3d@daum.com"],
+    ["홍사동", "h4d", "h4d@naver.com"],
+    ["홍오동", "h5d", "h5d@nate.com"],
+    ["홍육동", "h6d", "h6d@kakao.com"],
+    ["홍칠동", "h7d", "h7d@gmail.com"],
+];
+// #2. 선택자를 구성
+var $memList = document.querySelector("#mem_result");
+console.log($memList);
+
+// #3. 회원 리스트를 모을 빈 케이스를 구성한다.
+var $mem_case = "";
+
+// #4. 매개변수를 활용하여 테이블 내의 구조를 구성하는 함수구문 / 함수 호출문을 작성
+function memberListMake(name, id, email){
+    $mem_case += `
+    <tr>
+        <td>${name}</td>
+        <td>${id}</td>
+        <td>${email}</td>
+    </tr>
+    `;
+}
+// 호출문 방식 2
+for(i = 0; i < $member.length; i++){ // i = 0 ~ 6
+    memberListMake($member[i][0], $member[i][1], $member[i][2]);
+}
+
+// 호출문 방식 1
+// memberListMake($member[0][0], $member[0][1], $member[0][2]);
+// memberListMake($member[1][0], $member[1][1], $member[1][2]);
+// memberListMake($member[2][0], $member[2][1], $member[2][2]);
+// memberListMake($member[3][0], $member[3][1], $member[3][2]);
+// memberListMake($member[4][0], $member[4][1], $member[4][2]);
+// memberListMake($member[5][0], $member[5][1], $member[5][2]);
+// memberListMake($member[6][0], $member[6][1], $member[6][2]);
+
+// #5. 지정된 선택자 내부에 HTML 문구를 넣어준다.
+$memList.innerHTML = $mem_case;
+
+// 매개변수를 활용한 환경사진 화면에 뿌려주기
+// #1. 객체 배열 패턴
+var environ_arr = [
+    {img : "environ_news_1.jpg", title : "환경 사진1"},
+    {img : "environ_news_2.jpg", title : "환경 사진2"},
+    {img : "environ_news_3.jpg", title : "환경 사진3"},
+    {img : "environ_news_4.jpg", title : "환경 사진4"},
+    {img : "environ_news_5.jpg", title : "환경 사진5"},
+    {img : "environ_news_6.jpg", title : "환경 사진6"},
+    {img : "environ_news_7.jpg", title : "환경 사진7"},
+    {img : "environ_news_8.jpg", title : "환경 사진8"},
+    {img : "environ_news_9.jpg", title : "환경 사진9"},
+    {img : "environ_news_10.jpg", title : "환경 사진10"},
+    {img : "environ_news_11.jpg", title : "환경 사진11"},
+    {img : "environ_news_12.jpg", title : "환경 사진12"},
+];
+// #2. 선택자 구성
+var $photoCover = document.querySelector(".photoCover");
+
+// #3. 스크립트에서 사용할 빈 케이스를 구성
+var $photGroup = '';
+
+// #4. 함수구문/함수호출문
+function sendPhoto(imgPhoto, titlePhoto){
+    $photGroup += `
+    <div class="photo">
+        <div class="photoImg" style="background-image:url(./img/${imgPhoto})"></div>
+        <h4>${titlePhoto}</h4>
+    </div>
+    `
+}
+for(v of environ_arr) {
+    console.log(v);
+    sendPhoto(v.img, v.title);
+}
+
+// #5. HTML에 넣는다.
+$photoCover.innerHTML = $photGroup;
+
+// [과제] 던전 입장 시 멤버들 구성 됨 => 카톡 오픈 채팅방에 코드와 콘솔창 결과 이미지를 캡쳐해서 보내주세요.
+// (콘솔창에 출력할 내용)"이름(직업 - level)님이 입장하셨습니다."
+// 2차 배열 패턴["닉네임", "직업", level]
+var dundeon1 = [
+    ["불타는 용병", "기사", 56],
+    ["얼음 마법사", "마법사", 47],
+    ["암흑 도적단장", "도적", 51],
+    ["블랙 요정", "다크엘프", 49],
+];
+function enterance1(){
+    console.log();
+}
+// 반복하여 호출
+
+// 객체배열
+var dengeon2 = [
+    {nickname : "불타는 용병", job : "기사", level : 56},
+    {nickname : "얼음 마법사", job : "마법사", level : 47},
+    {nickname : "암흑 도적단장", job : "도적", level : 51},
+    {nickname : "블랙 요정", job : "다크엘프", level : 49},
+];
+function enterance2(){
+    console.log();
+}
+// 반복하여 호출
+
+// 전역변수 vs 지역변수 : (상대적 기준)
+var globalVar = "전역변수값"; //(대한민국)
+function varFunc() { //(경기도)
+    var localVar = "지역변수값";
+
+    console.log(globalVar);
+    console.log(localVar);
+}
+
+console.log(globalVar);
+// console.log(localVar); // localVar is not defined ==> 함수 구문 내부에 선언 된 변수(매개변수도 포함)는 외부에서 사용할 수 없음
+
+varFunc();
+///////////
+// 함수 구문 내부에서 선언된 값을 외부로 가져오기 위해서는
+var global = "전역값";
+function vFunc(){
+    var local = "지역값";
+    return local;
+}
+
+var localVal = vFunc();
+console.log(localVal);
+// #1. vFunc() 함수 실행
+// #2. 함수문으로부터 local의 지역변수값을 돌려받는다.
+// #3. localVal라는 변수에 담는다.
+
+// [return문] 함수를 계산하는 과정에서 데이터값으로 매개변수로 보내고 그 값을 지역에서 계산하여 돌려받는 과정
+function sum1(num1, num2){
+    var total_sum = num1 + num2;
+    console.log(total_sum);
+    return total_sum;
+}
+var final_sum = sum1(200, 300);
+console.log(final_sum);
+
+//[return문2]구매에 대한 최종 결과값을 도출 지역변수로 활용했을 때
+
+// 2차 배열 패턴 [햄버거 개당 구입 단가, 햄버거 수량, 콜라 개당 구입 단가, 콜라 수량]
+
+var finalTotal = 0;
+var $price_arr = [
+    [2000, 4, 1000, 3], // 1일차 구매
+    [2000, 2, 1000, 2], // 2일차 구매
+    [2000, 3, 1000, 5], // 3일차 구매
+];
+
+function eachBuy(hamPrice, hanNum,cokPrice, cokNum){
+    var eachSum = hamPrice * hanNum + cokPrice * cokNum;
+    return eachSum;
+}
+for(i in $price_arr){
+    console.log(i); // 0, 1, 2
+    console.log(typeof i); // string
+    var eachPrice = eachBuy($price_arr[i][0], $price_arr[i][1], $price_arr[i][2], $price_arr[i][3]);
+    console.log(eachPrice);
+    console.log(`${Number(i) + 1}일차 구매한 가격 : ${eachPrice} 원`);
+    finalTotal += eachPrice; // 11000, 6000, 11000
+}
+console.log(finalTotal);
+console.log(`${$price_arr.length}일간 총 구입 금액 : ${finalTotal} 원`);
+
+// 만약 장바구니에 담긴 최종 결제금액을 계산해야 한다면
+
+var cartTotalPrice = 0;
+var myCart = [
+    [25000, 1], // 25000원
+    [18000, 5], // 90000원
+];
+function calc(price, num){
+    var eachSum = price * num;
+    return eachSum;
+}
+for(i = 0; i < myCart.length; i++) {
+    var eachListTotal = calc(myCart[i][0], myCart[i][1]);
+    console.log(eachListTotal);
+    cartTotalPrice += eachListTotal;
+}
+console.log(`총 장바구니 금액 : ${cartTotalPrice}원`);
+
+//[return문3] : return만 작성하게 되면 함수구문의 진행을 중단해라
+function mem_list(name, age, region){
+    console.log(`이름 : ${name}`);
+    console.log(`나이 : ${age}`);
+    return;
+    console.log(`지역 : ${region}`); //return문 하위의 구문은 실행되지 않는다.
+}
+mem_list("이병헌", 50, "서울");
+// 데이터가 존재하지 않는다면(화면상 표현해야 할 데이터가 없는 상태), 스크립트 구문을 중단시키는 역할
+
+var testArr;
+function start() {
+    // if(!testArr){ // !testArr의 의미는 testArr라는 변수명에 데이터가 존재하지 않다면 
+    //     console.log("진행여부 확인1");
+    //     return;
+    // }
+    if(!testArr) return
+    console.log("진행여부 확인");
+}
+start();
+
+// switch(변수명){ 
+//     case "값1": return 실행문1 또는 구문1
+//     case "값2": return 실행문2 또는 구문2
+//     case "값3": return 실행문3 또는 구문3
+//     case "값4": return 실행문4 또는 구문4
+// }
+
+// 재귀함수 : 최초로 함수문을 실행한 후, 함수구문 내부에서 다시 호출하는 함수(이미지 슬라이드에서 자동모드일 때 좌측으로 이미지가 넘어가는 과정)
+var $k = 0; // 최초값
+function selfTest(){
+    $k++;
+    console.log(`재귀함수 : ${$k}`);
+    if($k >= 10) {
+        return;
+    }
+    selfTest();
+}
+selfTest(); // 최초 호출
+
+// 함수문과 함수 호출문의 위치(전역 함수 / 지역 함수 ==> 상대적인 위치)
+function firstFunc(msg1) { // 전역 함수문
+    console.log(msg1); // "메시지1"
+    function secondFunc(msg2) { // 지역 함수문
+        console.log(msg2); // "메시지2"
+    }
+    secondFunc("메시지2"); // 지역 함수 호출
+    // console.log(msg2);
+}
+firstFunc("메시지1"); // 전역 함수 호출
+// callback 함수 : 단계별로 진행이 요구되는 상황에서 사용. 콜백 지옥(promise ~ then ~ then)
+
+// 즉시 실행 함수(이미지 슬라이드의 시작을 제어)
+(function nowFunc() {
+    alert("즉시실행함수 실행~!!");
+})
+()
+// 즉시 실행함수의 특징
+// - 호출명이 없기 때문에 메모리값을 차지할 것이 없음
+// - 강제적 실행
+
