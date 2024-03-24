@@ -262,25 +262,25 @@ $photoCover.innerHTML = $photGroup;
 // [과제] 던전 입장 시 멤버들 구성 됨 => 카톡 오픈 채팅방에 코드와 콘솔창 결과 이미지를 캡쳐해서 보내주세요.
 // (콘솔창에 출력할 내용)"이름(직업 - level)님이 입장하셨습니다."
 // 2차 배열 패턴["닉네임", "직업", level]
-var dundeon1 = [
+var dungeon1 = [
     ["불타는 용병", "기사", 56],
     ["얼음 마법사", "마법사", 47],
     ["암흑 도적단장", "도적", 51],
     ["블랙 요정", "다크엘프", 49],
 ];
-function enterance1(){
+function entrance1(){
     console.log();
 }
 // 반복하여 호출
 
 // 객체배열
-var dengeon2 = [
+var dungeon2 = [
     {nickname : "불타는 용병", job : "기사", level : 56},
     {nickname : "얼음 마법사", job : "마법사", level : 47},
     {nickname : "암흑 도적단장", job : "도적", level : 51},
     {nickname : "블랙 요정", job : "다크엘프", level : 49},
 ];
-function enterance2(){
+function entrance2(){
     console.log();
 }
 // 반복하여 호출
