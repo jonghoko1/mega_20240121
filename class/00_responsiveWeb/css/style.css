@@ -1,0 +1,31 @@
+/* style.css */
+@charset "utf-8";
+
+*{box-sizing: border-box; font-family: 'Open Sans', sans-serif;}
+html, body{margin: 0; padding: 0;}
+h1, h2, h3, h4, h5, h6, p{margin: 0;}
+ul, ol{margin: 0; padding: 0; list-style: none;}
+a{text-decoration: none;}
+
+.box1 {
+    width: 200px;
+    height: 200px;
+    background-color: #faf;
+    transition: background-color 0.5s, width 0.5s;
+}
+
+
+.wrap1 {
+    width: 1200px;
+    margin: 0 auto;
+    background-color: #ccc;
+    display: flex;
+    flex-wrap: wrap;
+}
+.wrap1 div {
+    width: calc(25% - 20px);
+    height: 100px;
+    margin: 0 10px 20px;
+    background-color: #adf;
+}
+
