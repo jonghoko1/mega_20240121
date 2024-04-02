@@ -22,6 +22,7 @@ var hash_apply = function(){
         $contGroup += `<div style="background-image:url(./img/${$hash_txt}_0${i+1}.jpg)" onclick="location.href='./detail.html#${$hash_txt}_${i}'"></div>`
     }
     $contCover.innerHTML = $contGroup;
+    console.log($location.hash);
 }
 hash_apply();
 

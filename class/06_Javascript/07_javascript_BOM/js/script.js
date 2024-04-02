@@ -139,3 +139,10 @@ console.log($curURL.pathname);
 console.log($curURL.href);
 
 // location.href = "변경할 주소"
+// location.hash
+// 주소창에 정보를 전달해야할 경우
+var $urlHash = location.hash;
+console.log($urlHash);
+
+var realHashInfo = $urlHash.replace("#", "");
+console.log(realHashInfo);

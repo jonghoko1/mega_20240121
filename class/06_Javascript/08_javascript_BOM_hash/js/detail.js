@@ -50,6 +50,3 @@ if($brand == "puma"){
     $detailTitle.textContent = $puma[$index][1];
     $detailText.textContent = $puma[$index][2];
 }
-
-
-
