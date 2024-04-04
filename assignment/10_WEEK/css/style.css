@@ -1,1 +1,117 @@
 @charset "utf-8";
+
+* {box-sizing: border-box;}
+head, body {margin: 0; padding: 0;}
+ul, li {list-style: none;}
+
+/* edu_01 */
+#edu_01 {
+    width: 100%;
+    height: 120px;
+    padding: 40px;
+    background-color: #35aa99;
+    text-align: center;
+}
+#edu_01 span {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    line-height: 40px;
+}
+
+
+/* ex_03 */
+
+
+/* ex_04 */
+#ex_04 {
+    width: 100%;
+    height: 300px;
+    background-color: #4def12;
+}
+#ex_04 ul {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#ex_04 ul li {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    margin: 10px 0 10px;
+}
+
+
+/* ex_05 */
+#ex_05 {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+#ex_05 div {
+    width: calc(25% - 20px);
+    height: 300px;
+    margin: 0 10px;
+}
+#ex_05 .box1 {
+    background-color: red;
+}
+#ex_05 .box2 {
+    background-color: green;
+}
+#ex_05 .box3 {
+    background-color: blue;
+}
+#ex_05 .box4 {
+    background-color: yellow;
+}
+
+
+/* ex_06 */
+#ex_06 {
+    display: flex;
+    justify-content: center;
+}
+#ex_06 .wrap {
+    width: 960px;
+    font-size: 12px;
+    text-align: center;
+}
+#ex_06 .wrap header {
+    padding: 10px;
+    background-color: #aff;
+    font-size: 1.5em;
+    color: #474747;
+    line-height: 1;
+}
+#ex_06 .wrap section {
+    padding: 20px 0;
+    background-color: #faf;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+#ex_06 .wrap section .box {
+    width: calc(100% / 3);
+    height: 250px;
+    padding: 0 10px;
+}
+#ex_06 .wrap section .box article {
+    height: 100%;
+    padding: 10px;
+    background-color: #ffa;
+    font-size: 1.4em;
+}
+#ex_06 .wrap aside {
+    padding: 10px;
+    background-color: #afa;
+    font-size: 1.25rem;
+}
+#ex_06 .wrap footer {
+    padding: 10px;
+    background-color: #aaa;
+    font-size: 1.5rem;
+}
