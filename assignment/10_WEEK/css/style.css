@@ -2,7 +2,7 @@
 
 * {box-sizing: border-box;}
 head, body {margin: 0; padding: 0;}
-ul, li {list-style: none;}
+ul, li {margin: 0; padding: 0; list-style: none;}
 
 /* edu_01 */
 #edu_01 {
@@ -21,7 +21,13 @@ ul, li {list-style: none;}
 
 
 /* ex_03 */
-
+#ex_03 .box {
+    display: inline-block;
+    width: 25%;
+    height: 300px;
+    margin: 0 10px;
+    background-color: #12ee12;
+}
 
 /* ex_04 */
 #ex_04 {
@@ -114,4 +120,102 @@ ul, li {list-style: none;}
     padding: 10px;
     background-color: #aaa;
     font-size: 1.5rem;
+}
+
+
+/* ex_07 */
+#ex_07 {
+    /* width: 800px; */
+    /* height: 80px; */
+    display: flex;
+    justify-content: center;
+}
+#ex_07 ul {
+    width: 800px;
+    /* height: 100%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#ex_07 ul li {
+    width: 25%;
+    height: 80px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #363636;
+    background-color: #aeaeae;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#ex_07 ul li:hover {
+    background-color: #999;
+}
+
+
+/* ex_08 */
+#ex_08 {
+    width: 1200px;
+    margin: 0 auto;
+}
+#ex_08 .wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+#ex_08 .wrap div {
+    width: 25%;
+    height: 300px;
+    display: table;
+    background-position: center center;
+    background-size: cover;
+}
+#ex_08 .wrap .PortFolio-01 {
+    background-image: url(../img/01-01.jpg);
+}
+#ex_08 .wrap .PortFolio-02 {
+    background-image: url(../img/02-01.jpg);
+}
+#ex_08 .wrap .PortFolio-03 {
+    background-image: url(../img/03-01.jpg);
+}
+#ex_08 .wrap .PortFolio-04 {
+    background-image: url(../img/04-01.jpg);
+}
+#ex_08 .wrap .PortFolio-05 {
+    background-image: url(../img/05-01.jpg);
+}
+#ex_08 .wrap .PortFolio-06 {
+    background-image: url(../img/06-01.jpg);
+}
+#ex_08 .wrap .PortFolio-07 {
+    background-image: url(../img/07-01.jpg);
+}
+#ex_08 .wrap .PortFolio-08 {
+    background-image: url(../img/08-01.jpg);
+}
+#ex_08 .wrap .PortFolio-09 {
+    background-image: url(../img/09-01.jpg);
+}
+#ex_08 .wrap .PortFolio-10 {
+    background-image: url(../img/10-01.jpg);
+}
+#ex_08 .wrap .PortFolio-11 {
+    background-image: url(../img/11-01.jpg);
+}
+#ex_08 .wrap .PortFolio-12 {
+    background-image: url(../img/12-01.jpg);
+}
+#ex_08 .wrap div h4 {
+    color: transparent;
+}
+#ex_08 .wrap div:hover h4 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 1px 1px 2px #333;
+    text-align: center;
+    line-height: 300px;
+    display: table-cell;
+    background-color: rgba(0,0,0,0.4);
+    transition: color 0.5s, background-color 0.5s;
 }
