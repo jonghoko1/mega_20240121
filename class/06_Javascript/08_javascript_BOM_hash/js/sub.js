@@ -29,12 +29,21 @@ hash_apply();
 var $list = document.querySelectorAll("header .wrap nav ul li");
 console.log($list);  //NodeList(3) [li, li, li]
 
+var $body = document.querySelector("body"); // .showMenu
+var $resBtn = document.querySelector(".resBtn"); // .active
+var $nav = document.querySelector("header nav"); // .active
+
 for(const v of $list){ //const 예약어를 사용하게되면 요소의 위치를 확실하게 고정시킬 수 있음 <-> var 예약어는 변경되는 성향을 가진다.
     console.log(v);
     v.addEventListener("click", function(){  //sub.html 내부에서 메뉴를 클릭했을 때
         console.log(v);
-        $hash_txt = v.getAttribute("rel");  //기존 해시로부터 받아온 값을 각 li에 담긴 내용(속성값 rel)으로 변경하겠다는 의미
+        $hash_txt = v.getAttribute("rel"); //기존 해시로부터 받아온 값을 각 li에 담긴 내용(속성값 rel)으로 변경하겠다는 의미
         console.log($hash_txt);
         hash_apply(); //상단에 선언된 함수를 호출
+
+        // 반응형의 경우, sub.html 페이지에서 각 브랜드별 메뉴 클릭시, 페이지의 데이터를 받으면서 메뉴를 닫아준다.
+        $body.classList.remove("showMenu");
+        $resBtn.classList.remove("active");
+        $nav.classList.remove("active");
     });
 }

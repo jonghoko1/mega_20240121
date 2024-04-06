@@ -50,3 +50,13 @@ if($brand == "puma"){
     $detailTitle.textContent = $puma[$index][1];
     $detailText.textContent = $puma[$index][2];
 }
+
+
+// 하단의 목록 보기 버튼 클릭시
+var backBtn = document.querySelector(".history button");
+backBtn.addEventListener("click", function(){
+    // history.back(); // 방문 기록상 한단계 뒤로 보낸다.
+    // history.forward(); // 방문 기록상 한단계 앞으로 보낸다.
+    // history.go(-1); // 방문 기록상 한단계 뒤로 보낸다.
+    location.href = `./sub.html#${$brand}`
+});
