@@ -1,0 +1,43 @@
+<script>
+    //ES6에서 함수 도입 "화살표 함수" : =>
+    //비교연산자 : <=, >=
+
+    /* 기존함수 */
+    // 일반함수 : 직접 함수 호출
+    function add1(a, b){
+        return a + b;
+    }
+    console.log(add1(7, 8)); //15
+
+    // 익명함수 : 간접 함수 호출
+    var add2 = function(a, b){
+        return a + b;
+    }
+    console.log(add2(7, 8)); //15
+
+    // react에서 일반 함수로 선언된 경우, export를 선언하여 다른 구성에서 사용 가능하도록 구조를 설계해야 함
+
+    const add3 = function(c, d){
+        return c + d;
+    }
+    console.log(add3(10, 20)); //30
+
+    // 화살표 함수 적용. function 단어 제거 / (소괄호)에 이어서 "=>"라는 기호만 작성한다. / 내부 실행문에 return 문만 존재한다면 삭제 가능 + {}중괄호도 삭제 가능
+    const add4 = (c, d) => c + d;
+    console.log(add4(10, 20)); //30
+
+    const add5 = (e, f) => {
+        let rst;
+        return e + f;
+    }
+    console.log(add5(10, 20));
+
+
+
+
+
+
+
+
+
+</script>
