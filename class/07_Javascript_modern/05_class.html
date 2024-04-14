@@ -1,0 +1,134 @@
+<script>
+    //class라는 개념은 자바로 인입된 개념 중 하나
+    //class라는 존재는 어떠한 그룹을 가리킴
+
+    const pony = {
+        name: "아반떼",
+        color: "white",
+        start: function(){
+            console.log(`${this.name}가(이) 시동을 겁니다.`);
+        },
+        drive: function(){
+            console.log(`${this.name}가(이) 주행을 시작합니다.`);
+        },
+        stop: function(){
+            console.log(`${this.name}가(이) 주행을 멈춥니다.`);
+        },
+        parking: function(){
+            console.log(`${this.name}가(이) 주차를 합니다.`);
+        },
+    }
+    console.log(pony.name);
+    console.log(pony.color);
+    pony.start();
+    pony.drive();
+    pony.stop();
+    pony.parking();
+
+    // 객체는 주목적이 재활용을 기반으로 접근
+    // 프로토타입 : 재사용이 가능한 구조를 만듬
+    const Car = (function(){
+        console.log("프로토타입의 시작");
+        //생성자(Constructuor) - 객체 내의 어떤 새로운 key와 value 값을 생성하여 받아들일 수 있도록 구성. 객체 내부의 생성을 담당하는 곳
+        function Car(name1, color1, type1){
+            console.log(this);
+            this.name = name1;
+            this.color = color1;
+            this.type = type1;
+            console.log(this);
+        }
+        Car.prototype.start = function(){
+            console.log(this);
+            console.log(`${this.color} ${this.name}가(이) 시동을 겁니다.`);
+            avante.drive();
+        }
+        Car.prototype.drive = function(){
+            console.log(`${this.color} ${this.name}가(이) 주행을 시작합니다.`);
+            this.stop();
+        }
+        Car.prototype.stop = function(){
+            console.log(`${this.color} ${this.name}가(이) 주행을 멈춥니다.`);
+            this.parking();
+        }
+        Car.prototype.parking = function(){
+            console.log(`${this.color} ${this.name}가(이) 주차를 합니다.`);
+        }
+
+
+        return Car; //Car 메모리에 돌려준다.
+    })(); //즉시실행함수를 사용하여 함수를 작동시킨다.(최초실행)
+
+    const avante = new Car("아반떼", "화이트", "준중형");
+    avante.start();
+    
+    const tusan = new Car("투싼", "검정", "SUV");
+    tusan.start();
+
+    //자바스크립트의 내장 객체
+    //new Datd : 날짜 객체를 선언
+    //new String : 문자 객체를 선언
+    //new Number : 수학 객체를 선언
+    //new Array : 배열 객체를 선언
+    //new Object : 객체를 선언
+    
+    //new Student() 선언하는 것은 내장 객체에 포함된 것이 아님, 인스턴스 객체 => Student라는 명칭이 무엇을 하는 것인지에 대한 사전적 정의가 필요
+
+
+    //[실습]
+    const member_student = [
+        ["강나라", "7반"],
+        ["나영지", "3반"],
+        ["김동현", "9반"],
+    ];
+    //[콘솔 결과 출력] 000 학생이 0반에 들어갔습니다.
+    //for문 사용하여 Student라는 프로토타입화 시킴
+
+    const Student = (function(){
+        //생성자 파트
+        function Student(st_name, st_class){
+            this.name = st_name;
+            this.class = st_class;
+        }
+        Student.prototype.enter = function(){
+            console.log(`${this.name} 학생이 ${this.class}에 들어갔습니다.`);
+        }
+        return Student;
+    })();
+
+    for(v of member_student){
+        console.log(v);
+        const st_mem = new Student(v[0], v[1]);
+        st_mem.enter();
+    }
+
+
+    //[실습] 게임 입장 파트(던전)
+    //배열 패턴 : {"이름", "종족", "레벨"}
+    const gamer = [
+        {name: "불타는 용병", category: "오크", level: 54},
+        {name: "얼음 마법사", category: "휴먼", level: 32},
+        {name: "할리퀸", category: "하이엘프", level: 28},
+        {name: "언제나 초보", category: "오크", level: 47},
+    ];
+    //예시, 콘솔창에 "이름(종족 - 레벨) 님이 입장하셨습니다." (총 4명)
+    //반드시 프로토타입으로 구성할 것~! new Gamer()
+
+    const Gamer = (function(){
+        // 생성자 파트
+        function Gamer(gm_name, gm_category, gm_level){
+            this.name = gm_name;
+            this.category = gm_category;
+            this.level = gm_level;
+        }
+        Gamer.prototype.enter = function(){
+            console.log(`${this.name}(${this.category} - ${this.level}) 님이 입장하셨습니다.`)
+        }
+        return Gamer;
+    })();
+
+    for(let i=0; i < gamer.length; i++){
+        const gamer_mem = new Gamer(gamer[i].name, gamer[i].category, gamer[i].level);
+        gamer_mem.enter();
+    }
+
+</script>
