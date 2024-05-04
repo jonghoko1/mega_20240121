@@ -105,19 +105,17 @@ const footerEl_data = {
 }
 const footerEl = (
     <>
-        <div className="container" style={{borderTop: "1px solid #ddd"}}>
-            <ul className="row">
-                {footerEl_data.list.map((v, i) => (
+        <div className="container py-3" style={{borderTop: "1px solid #ddd"}}>
+            <ul className="row ">
+                {footerEl_data?.list.map((v, i) => (
                     <li className="col-4 text-center" key={i}><a href={v.link}>{v.menu}</a></li>
                 ))}
             </ul>
         </div>
         <p className="text-center py-2">{footerEl_data.copyWrite}</p>
     </>
-)
-
-
+);
 
 ReactDOM.render(headerEl, document.querySelector("#header"));
-ReactDOM.render(section1El, document.querySelector("#section1"))
+ReactDOM.render(section1El, document.querySelector("#section1"));
 ReactDOM.render(footerEl, document.querySelector("#footer"));

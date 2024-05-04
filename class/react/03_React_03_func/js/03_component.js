@@ -3,10 +3,7 @@
 //Component는 재사용 가능한 코드의 조각
 //Component는 항상 대문자로 시작(소문자로 작성을 하면 태그로 인식)
 
-// React.Component
-
-// console.log(React.Component);
-
+console.log(React.Component);
 /*
 ƒ Component(props, context, updater) {
     this.props = props;
@@ -34,14 +31,9 @@ const Hello2 = () => {
 const comResult = (
     <div>
         <Hello1 />
-        {/* <Hello>{자식인자}</Hello> */}
+        {/* <Hello1>{자식인자}</Hello1> */}
         <Hello2 />
     </div>
 );
 
-
-
-
-
-
-ReactDOM.render( comResult , root);
+ReactDOM.render( comResult, root);
